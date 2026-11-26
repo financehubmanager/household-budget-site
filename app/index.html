@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SakuRumah — Anggaran Rumah Tangga</title>
+<meta name="description" content="SakuRumah: anggaran rumah tangga zero-based untuk Keluarga Wijaya — rencana, transaksi, tagihan, tujuan, dan pelunasan utang dalam satu tempat.">
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#/dashboard"><span class="brand-mark">◈</span>
+    <span class="brand-text"><b>SakuRumah</b><i>Anggaran Rumah Tangga</i></span></a>
+  <div class="month-switch">
+    <button id="month-prev" aria-label="Bulan sebelumnya">‹</button>
+    <span id="month-label">November 2026</span>
+    <button id="month-next" aria-label="Bulan berikutnya">›</button>
+  </div>
+  <div class="top-actions">
+    <span id="rta-badge" class="rta-badge zero">Siap Dialokasikan <b>Rp 0</b></span>
+    <button id="reset-demo" class="btn ghost small">Reset ke demo</button>
+  </div>
+</header>
+<div class="shell">
+  <nav class="sidenav" aria-label="Navigasi utama">
+    <a class="nav-link" data-route="dashboard" href="#/dashboard"><span>🏠</span> Dasbor</a>
+    <a class="nav-link" data-route="anggaran" href="#/anggaran"><span>📊</span> Anggaran</a>
+    <a class="nav-link" data-route="transaksi" href="#/transaksi"><span>🧾</span> Transaksi</a>
+    <a class="nav-link" data-route="tagihan" href="#/tagihan"><span>💡</span> Tagihan</a>
+    <a class="nav-link" data-route="tujuan" href="#/tujuan"><span>🎯</span> Tujuan</a>
+    <a class="nav-link" data-route="utang" href="#/utang"><span>💳</span> Utang</a>
+    <p class="nav-foot">Keluarga Wijaya · Semarang<br>Demo interaktif — data tersimpan di perangkat ini.</p>
+  </nav>
+  <main id="view" class="view" aria-live="polite"></main>
+</div>
+
+<div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <form id="modal-form" class="modal-card">
+    <div class="modal-head"><h2 id="modal-title">Tambah transaksi</h2>
+      <button type="button" id="modal-close" aria-label="Tutup">×</button></div>
+    <label>Merchant / keterangan
+      <input id="f-merchant" type="text" required maxlength="80" placeholder="cth. Pasar Johar">
+    </label>
+    <div class="form-row">
+      <label>Jumlah (Rp)
+        <input id="f-amount" type="number" required min="1" step="1" placeholder="100000">
+      </label>
+      <label>Tanggal (hh/bb/tttt)
+        <input id="f-date" type="text" inputmode="numeric" placeholder="26/11/2026" required>
+      </label>
+    </div>
+    <div class="form-row">
+      <label>Jenis
+        <select id="f-type">
+          <option value="expense">Pengeluaran</option>
+          <option value="income">Pemasukan</option>
+          <option value="transfer">Transfer / bayar utang</option>
+        </select>
+      </label>
+      <label>Kategori
+        <select id="f-category">
+          <option value="belanja">Belanja Harian</option>
+          <option value="makan">Makan di Luar</option>
+          <option value="transport">Transportasi</option>
+          <option value="tagihan">Tagihan Rumah</option>
+          <option value="sekolah">Sekolah Anak</option>
+          <option value="kesehatan">Kesehatan</option>
+          <option value="hiburan">Hiburan</option>
+          <option value="pakaian">Pakaian</option>
+          <option value="cicilan">Cicilan Motor</option>
+          <option value="tabungan">Tabungan &amp; Tujuan</option>
+          <option value="cadangan">Dana Cadangan</option>
+        </select>
+      </label>
+    </div>
+    <label>Untuk tujuan (bila kategori Tabungan &amp; Tujuan)
+      <select id="f-goal">
+        <option value="">— Bukan untuk tujuan tertentu —</option>
+        <option value="darurat">Dana Darurat</option>
+        <option value="liburan">Liburan Keluarga</option>
+        <option value="pendidikan">Dana Pendidikan</option>
+      </select>
+    </label>
+    <div class="modal-actions">
+      <button type="button" id="modal-cancel" class="btn">Batal</button>
+      <button type="submit" class="btn primary">Simpan</button>
+    </div>
+  </form>
+</div>
+<div id="toast" class="toast hidden" role="status"></div>
+<script type="module" src="./js/app.js"></script>
+</body>
+</html>
