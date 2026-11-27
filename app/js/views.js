@@ -46,6 +46,8 @@ export function viewDashboard(year, month) {
   const billsTotal = bills.reduce((a, b) => a + b.amount, 0);
   const billsPaid = bills.filter((b) => b.paid).reduce((a, b) => a + b.amount, 0);
   const goals = goalProgress(year, month);
+  const debts = debtState();
+  const d0 = debts[0];
   const expenseCount = s.txns.filter((t) => t.type === 'expense' && t.category !== 'tabungan').length;
   const lastTrend = trend[trend.length - 1];
   const paceTop = categories()
@@ -71,9 +73,9 @@ export function viewDashboard(year, month) {
       <h2>Tren 12 bulan <span class="card-sub">masuk · keluar · ditabung</span></h2>
       ${trendChart(trend)}
       <div class="chart-caption">${monthLabel(lastTrend.year, lastTrend.month)}: masuk ${fmtRpShort(lastTrend.income)} · keluar ${fmtRpShort(lastTrend.spent)} · ditabung ${fmtRpShort(lastTrend.saved)}</div>
-      <div class="chart-legend"><span><i class="sw" style="background:#14532D"></i>Pemasukan</span>
+      <div class="chart-legend"><span><i class="sw" style="background:#16294A"></i>Pemasukan</span>
       <span><i class="sw" style="background:#C2410C"></i>Pengeluaran</span>
-      <span><i class="sw" style="background:#B8860B"></i>Ditabung</span></div>
+      <span><i class="sw" style="background:#C89B3C"></i>Ditabung</span></div>
     </section>
     <section class="card pace-card">
       <h2>Kecepatan belanja <span class="card-sub">hari ke-${CURRENT.today} dari ${CURRENT.daysInMonth}</span></h2>
@@ -96,6 +98,7 @@ export function viewDashboard(year, month) {
             <b>${fmtRp(b.amount)}</b>
             <button class="btn small" data-action="pay-bill" data-bill="${b.id}">Tandai dibayar</button></div>`).join('')}
       <div class="bill-foot">Total tagihan ${fmtRp(billsTotal)} · lunas ${fmtRp(billsPaid)}</div>
+      <div class="bill-foot debt-line">💳 ${d0.name}: ${fmtRpShort(d0.balance)} · min ${fmtRpShort(d0.minPayment)}/bln</div>
       <a class="card-link" href="#/tagihan">Semua tagihan →</a>
     </section>
     <section class="card goals-card">
