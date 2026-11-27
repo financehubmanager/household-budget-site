@@ -1,4 +1,26 @@
-# SCORECARD — SakuRumah
+# SCORECARD
+
+## Round 05 — v2 self-score (builder, 2026-11-27; NOT a fresh critic — label honestly)
+
+| # | Row | v1 | v2 | Note |
+|---|-----|----|----|------|
+| 1 | Completeness of budget | 7 | 8 | Debt now visible on cover (Kartu Kredit Rp 4,8 jt · min Rp 475 rb/bln); every view's figures reachable from the cover frame. |
+| 2 | Clarity of figures | 8 | 8 | — |
+| 3 | Number consistency | 8 | 8 | check.mjs: RTA = 0, all views agree; add-txn +50.000 / −50.000 remaining. |
+| 4 | Look & originality | 6 | 8 | **Lumbung identity**: navy + gold, dark rail, 🌾 mark — no longer a "Hearth" lookalike. The v1 diagnosis (round 1: field converged on warm cream + green "Hearth" variants). |
+| 5 | Structure | 8 | 8 | — |
+| 6 | Realism of demo data | 8 | 8 | — |
+| 7 | Composition | 8 | 8 | Cover: all 3 card-links visible again after the debt-line fix. |
+| 8 | Charts | 7 | 7 | Sankey header + top flows now in the plan frame (freed ~40 px), but the flow body is still below the fold — partial only, not a full point. |
+| 9 | Accessibility | 8 | 8 | — |
+| 10 | Mobile | 8 | 8 | Dark bottom nav verified on the phone shot. |
+| 11 | Interactivity | 6 | 6 | **Unchanged, stale round-01 critic score.** Interactions all probe-verified (modal, click-to-edit amounts, "Tandai dibayar"). Accepted — not a code problem. |
+| 12 | Fit with the brief | 9 | 9 | — |
+| 13 | Trust | 8 | 8 | — |
+| 14 | Polish | 7 | 8 | Navy chrome + gold pill read cleanly at contact-sheet size. |
+| 15 | Completeness of evidence | 9 | 9 | Dossier deterministic (2× same sha256 b253849b…). |
+
+**Min 6** (row 11, stale critic score — accepted). **Goal for v2: row 4.** — Lumbung
 
 Rows are scored 1–10 from the contact sheet + a playtest, by a FRESH critic
 subagent that has not seen the code. Anchors: 4 = readable but generic,
