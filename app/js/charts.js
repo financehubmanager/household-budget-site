@@ -66,7 +66,7 @@ export function trendChart(months, width = 640, height = 190) {
     const spentH = h - (y(m.spent) - padT);
     const savedH = h - (y(m.saved) - padT);
     return `<rect x="${x.toFixed(1)}" y="${y(m.spent).toFixed(1)}" width="${barW.toFixed(1)}" height="${spentH.toFixed(1)}" rx="3" fill="#C2410C" opacity="${m.current ? 1 : 0.8}"><title>${monthShort(m.year, m.month)}: keluar ${fmtRp(m.spent)}</title></rect>`
-      + `<rect x="${x.toFixed(1)}" y="${y(m.saved).toFixed(1)}" width="${barW.toFixed(1)}" height="${savedH.toFixed(1)}" rx="3" fill="#B8860B" opacity="0.85"><title>${monthShort(m.year, m.month)}: ditabung ${fmtRp(m.saved)}</title></rect>`;
+      + `<rect x="${x.toFixed(1)}" y="${y(m.saved).toFixed(1)}" width="${barW.toFixed(1)}" height="${savedH.toFixed(1)}" rx="3" fill="#C89B3C" opacity="0.85"><title>${monthShort(m.year, m.month)}: ditabung ${fmtRp(m.saved)}</title></rect>`;
   }).join('');
   // Garis pemasukan.
   const pts = months.map((m, i) => `${(padL + i * slot + slot / 2).toFixed(1)},${y(m.income).toFixed(1)}`).join(' ');
@@ -77,8 +77,8 @@ export function trendChart(months, width = 640, height = 190) {
   return `<svg viewBox="0 0 ${width} ${height}" class="trend" role="img" aria-label="Tren 12 bulan">
     ${grid}
     ${bars}
-    <polyline points="${pts}" fill="none" stroke="#14532D" stroke-width="2" stroke-linejoin="round"/>
-    ${months.map((m, i) => `<circle cx="${(padL + i * slot + slot / 2).toFixed(1)}" cy="${y(m.income).toFixed(1)}" r="3" fill="#14532D"><title>${monthShort(m.year, m.month)}: masuk ${fmtRp(m.income)}</title></circle>`).join('')}
+    <polyline points="${pts}" fill="none" stroke="#16294A" stroke-width="2" stroke-linejoin="round"/>
+    ${months.map((m, i) => `<circle cx="${(padL + i * slot + slot / 2).toFixed(1)}" cy="${y(m.income).toFixed(1)}" r="3" fill="#16294A"><title>${monthShort(m.year, m.month)}: masuk ${fmtRp(m.income)}</title></circle>`).join('')}
     ${labels}
   </svg>`;
 }
@@ -153,16 +153,16 @@ export function sankeyChart(summary, width = 640, height = 240) {
   }
   // Tabungan & sisa langsung dari pemasukan (pita tipis di bawah).
   const saveY = yIncome + (income - saved - remaining) * scale;
-  bands.push(band(colX[0] + colW, saveY, colX[2], outY.saved, saved * scale, outH.saved, '#1B4332'));
+  bands.push(band(colX[0] + colW, saveY, colX[2], outY.saved, saved * scale, outH.saved, '#16294A'));
   const remY = yIncome + (income - remaining) * scale;
   bands.push(band(colX[0] + colW, remY, colX[2], outY.remaining, remaining * scale, outH.remaining, '#78909C'));
   const node = (x, y, h, color, label, value) => `<rect x="${x}" y="${y}" width="${colW}" height="${Math.max(6, h)}" rx="4" fill="${color}"/><text x="${x + colW / 2}" y="${y + Math.max(6, h) + 14}" text-anchor="middle" class="sankey-lbl">${label}</text><text x="${x + colW / 2}" y="${y + Math.max(6, h) + 28}" text-anchor="middle" class="sankey-val">${fmtRpShort(value)}</text>`;
   return `<svg viewBox="0 0 ${width} ${height}" class="sankey" role="img" aria-label="Aliran uang bulan ini">
     ${bands.join('')}
-    ${node(colX[0], yIncome, hIncome, '#14532D', 'Pemasukan', income)}
+    ${node(colX[0], yIncome, hIncome, '#16294A', 'Pemasukan', income)}
     ${mid.map((g) => node(colX[1], g.y, g.h, g.color, g.label, g.value)).join('')}
     ${node(colX[2], outY.spent, outH.spent, '#C2410C', 'Terpakai', income - saved - remaining)}
-    ${node(colX[2], outY.saved, outH.saved, '#1B4332', 'Ditabung', saved)}
+    ${node(colX[2], outY.saved, outH.saved, '#16294A', 'Ditabung', saved)}
     ${node(colX[2], outY.remaining, outH.remaining, '#78909C', 'Sisa', remaining)}
   </svg>`;
 }
