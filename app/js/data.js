@@ -1,4 +1,4 @@
-// data.js — Dataset demo SakuRumah: Keluarga Wijaya, Semarang.
+// data.js — Dataset demo Lumbung: Keluarga Wijaya, Semarang.
 // Semua angka ditulis di sini (bukan diambil dari mana pun): transaksi bulan
 // berjalan (November 2026) ditulis eksplisit per transaksi agar total tiap
 // kategori tepat seperti BRIEF.md; 11 bulan sebelumnya dibangkitkan dari RNG
@@ -24,7 +24,7 @@ export const CATEGORIES = [
   { id: 'hiburan',    name: 'Hiburan',           short: 'Hiburan',    icon: '🎬', color: '#AD1457', plan: 500000 },
   { id: 'pakaian',    name: 'Pakaian',           short: 'Pakaian',    icon: '👕', color: '#5D4037', plan: 350000 },
   { id: 'cicilan',    name: 'Cicilan Motor',     short: 'Cicilan',    icon: '🏍️', color: '#37474F', plan: 850000 },
-  { id: 'tabungan',   name: 'Tabungan & Tujuan', short: 'Tabungan',   icon: '🎯', color: '#1B4332', plan: 1750000 },
+  { id: 'tabungan',   name: 'Tabungan & Tujuan', short: 'Tabungan',   icon: '🎯', color: '#16294A', plan: 1750000 },
   { id: 'cadangan',   name: 'Dana Cadangan',     short: 'Cadangan',   icon: '🛟', color: '#78909C', plan: 1000000 },
 ];
 
