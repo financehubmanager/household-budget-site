@@ -1,4 +1,4 @@
-// app.js — Boot + router hash + semua event global SakuRumah.
+// app.js — Boot + router hash + semua event global Lumbung.
 // Satu-satunya file yang menyentuh DOM di luar views.js.
 import { CURRENT, MONTHS, monthKey } from './data.js';
 import { fmtRp, monthLabel, esc, dateToDisplay, dateFromDisplay } from './format.js';
@@ -81,7 +81,7 @@ const app = {
       const input = document.getElementById('txn-search');
       if (input) { input.focus(); input.setSelectionRange(input.value.length, input.value.length); }
     }
-    document.title = `SakuRumah — ${NAV_LABELS[this.route]} · ${monthLabel(this.year, this.month)}`;
+    document.title = `Lumbung — ${NAV_LABELS[this.route]} · ${monthLabel(this.year, this.month)}`;
   },
 
   // --- Modal transaksi ---
