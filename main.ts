@@ -1,4 +1,4 @@
-// SakuRumah — household budget site: the entrypoint (Node 22, standard
+// Lumbung — household budget site: the entrypoint (Node 22, standard
 // library only). It hands the site in: copies app/ and screenshots/ from
 // beside this file to /output and writes /output/dossier.json, the summary
 // the judge reads, with the vendored make.fun library.
