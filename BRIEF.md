@@ -1,4 +1,4 @@
-# BRIEF — SakuRumah: Anggaran Rumah Tangga
+# BRIEF — Lumbung: Anggaran Rumah Tangga
 
 ## The contract (make.fun bounty "Make the best household budget site", 26–29 Nov 2026)
 
@@ -38,7 +38,7 @@
 
 ## The site
 
-**Name:** SakuRumah — Anggaran Rumah Tangga. **Household:** Keluarga Wijaya
+**Name:** Lumbung — Anggaran Rumah Tangga. **Household:** Keluarga Wijaya
 (Budi & Sari, 2 anak), Semarang. **Currency:** IDR. **Current month:**
 November 2026 ("hari ini" 26 Nov 2026, fixed for deterministic screenshots).
 **Method:** zero-based budgeting — every rupiah has a job; Ready to Assign
@@ -87,11 +87,13 @@ tandai tagihan dibayar; tambah dana tujuan; kalkulator utang; pindah bulan
 
 ## Look (one style, no placeholders)
 
-- Ledger-paper identity: warm cream background (#FAF6EF), deep green ink
-  (#14532D / #1B4332), terracotta accent (#C2410C), gold highlights (#B8860B).
-  Serif display for big numbers (Georgia stack, system only — no webfont, no
-  network), system sans for UI. No framework, no library: hand-rolled SVG
-  charts (donut, trend bars+line, pace bars, Sankey-lite flow).
+- Midnight-granary identity (v2): ink-navy chrome (#0F1D33 topbar + nav
+  rail, #16294A primary) + harvest gold (#C89B3C) on warm cream paper
+  (#FAF6EF); terracotta accent (#C2410C) kept for overspend; rice-sheaf
+  brand mark 🌾. Serif display for big numbers (Georgia stack, system
+  only — no webfont, no network), system sans for UI. No framework, no
+  library: hand-rolled SVG charts (donut, trend bars+line, pace bars,
+  Sankey-lite flow).
 - Every number formatted `Rp 12.500.000` (id-ID). Dates Indonesian.
 - Density: dashboard cover must fit 1280×720 without scrolling — the whole
   app in one frame, legible when shrunk to 768×480 on the contact sheet.
